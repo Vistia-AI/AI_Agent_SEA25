@@ -41,7 +41,7 @@ def get_tos(heatMapType: str, timeType: str, db: Session = Depends(get_db)):
         from {SCHEMA}{table_name}
         where {rsi_period} is not null
         and {rsi_period} < 30
-        and symbol like '%USDT'
+        and symbol like '%VNST'
         and open_time = (
             select max(open_time) as open_time
             from (
@@ -96,7 +96,7 @@ def get_tob(heatMapType: str, timeType: str, db: Session = Depends(get_db)):
         from {SCHEMA}{table_name}
         where {rsi_period} is not null
         and {rsi_period} > 70
-        and symbol like '%USDT'
+        and symbol like '%VNST'
         and open_time = (
         select max(open_time) as open_time
         from (
@@ -158,7 +158,7 @@ def get_chart_data(heatMapType: str, timeType: str, db: Session = Depends(get_db
             ({rsi_period} - lead({rsi_period}) over (PARTITION by symbol order by open_time desc)) AS percentage_change,
             row_number() over (PARTITION by symbol order by open_time desc) AS r
         FROM {SCHEMA}{table_name}
-        WHERE symbol LIKE '%USDT'
+        WHERE symbol LIKE '%VNST'
         	and {rsi_period} is not null
             and open_time > "{time_limit}"
         ) a
@@ -215,7 +215,7 @@ def get_original_pair_list(timeType: str, db: Session = Depends(get_db)) -> List
 def get_fibo_info(originalPair, timeType, db: Session = Depends(get_db)) -> schemas.RefSymbol:
     """
     PARAM:
-    - originalPair: example BTCUSDT, ...
+    - originalPair: example BTCVNST, ...
     - timeType: FOUR_HOUR | ONE_HOUR | ONE_DAY
     """
     originalPair = originalPair.strip()

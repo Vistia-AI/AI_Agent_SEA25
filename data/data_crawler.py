@@ -5,7 +5,6 @@ import pandas as pd
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from config.db import DB
 import pandas as pd 
 
 # Load environment variables
