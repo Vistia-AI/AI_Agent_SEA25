@@ -13,7 +13,7 @@ import numpy as np
 from datetime import datetime 
 
 load_dotenv()
-symbol_list  = os.getenv("SYMBOLS", "USDTVNST,ETHVNST,BTCVNST").split(",")
+symbol_list  = os.getenv("SYMBOLS", "USDTVNST,ETHVNST,VBTCVNST").split(",")
 DB_URL = os.getenv("DB_URL", "mysql+pymysql://user:password@127.0.0.1:3306/database")
 
 RPC = os.getenv("RPC", "https://bsc-pokt.nodies.app")

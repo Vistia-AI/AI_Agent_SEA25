@@ -10,7 +10,7 @@ import pandas as pd
 # Load environment variables
 load_dotenv()
 TABLE_NAME  = os.getenv("TABLE_NAME", "coin_prices")
-symbol_list  = os.getenv("SYMBOLS", "USDTVNST,ETHVNST,BTCVNST").split(",")
+symbol_list  = os.getenv("SYMBOLS", "USDTVNST,ETHVNST,VBTCVNST").split(",")
 DB_URL = os.getenv("DB_URL", "mysql+pymysql://user:password@127.0.0.1:3306/database")
 
 engine = create_engine(DB_URL)

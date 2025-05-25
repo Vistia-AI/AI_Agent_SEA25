@@ -215,7 +215,7 @@ def get_original_pair_list(timeType: str, db: Session = Depends(get_db)) -> List
 def get_fibo_info(originalPair, timeType, db: Session = Depends(get_db)) -> schemas.RefSymbol:
     """
     PARAM:
-    - originalPair: example BTCVNST, ...
+    - originalPair: example VBTCVNST, ...
     - timeType: FOUR_HOUR | ONE_HOUR | ONE_DAY
     """
     originalPair = originalPair.strip()

@@ -256,7 +256,7 @@ class NamiTradeBot:
     def __init__(self, call_budget: float = 5.0, symbols=None):
         # Configuration
         self.call_budget = call_budget
-        self.symbols = symbols or ['BTCVNST', 'ETHVNST', 'USDTVNST']
+        self.symbols = symbols or ['VBTCVNST', 'ETHVNST', 'USDTVNST']
 
         # load symbol info
         df = pd.read_csv(f'./config/spot_config.csv', index_col='symbol')
@@ -399,8 +399,8 @@ class NamiTradeBot:
 
 def test():
     print('Run test')
-    test_bot = NamiTradeBot(call_budget=10, symbols=['BTCVNST', 'ETHVNST', 'USDTVNST'])
-    a = test_bot.create_order(symbol='BTCVNST', price=102000, quantity=0.0001, side='SELL', type_='LIMIT')
+    test_bot = NamiTradeBot(call_budget=10, symbols=['VBTCVNST', 'ETHVNST', 'USDTVNST'])
+    a = test_bot.create_order(symbol='VBTCVNST', price=102000, quantity=0.0001, side='SELL', type_='LIMIT')
     print(a)
 
 
